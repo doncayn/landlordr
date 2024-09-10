@@ -49,6 +49,10 @@ header p {
     
 }
 
+header button {
+    margin-top: 5px;
+}
+
 .adlam-display-regular {
     font-family: "ADLaM Display", system-ui;
     font-weight: 400;
