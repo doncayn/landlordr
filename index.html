@@ -3,16 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LandLordr</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Add other style sheets below this line -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Script imports -->
+    <link rel="script" href="./assets/js/index.js">
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
-<h1>LandLordr</h1>
-<nav>
-    <ul>
-        <li>Take Me Home...</li>
-    </ul>
-</nav>
-
+  <header>
     
+    <div>
+      <h1 class="header">LandLordr</h1>
+      <p>Track, manage, and store tenant information all in one place. Streamline your property management and never miss a lease renewal or payment again.</p>
+      <!-- Button to trigger modal -->
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Login
+    </button>
+    <!-- <div class="jumbotron">
+        <nav>
+            <ul>
+                <button>Take Me Home...</button>
+                <button>Country Road...</button>
+            </ul>
+        </nav>
+    </div> -->
+  </header>
+
+  <main>
+    <!-- Benefits Section -->
+    <section>
+      <div class="container">
+          <h2>Why Landlordr?</h2>
+          <div class="benefits">
+              <div class="benefit-item">
+                  <h3>Manage Tenant Data Effortlessly</h3>
+                  <p>Store all tenant information in one place, including lease agreements, contact details, payment history, and more.</p>
+              </div>
+              <div class="benefit-item">
+                  <h3>Automated Reminders and Alerts</h3>
+                  <p>Receive notifications for upcoming lease expirations, rent payments, and important tenant milestones.</p>
+              </div>
+              <div class="benefit-item">
+                  <h3>Secure Document Storage</h3>
+                  <p>Keep digital copies of leases, tenant applications, and other essential documents securely stored and easily accessible.</p>
+              </div>
+              <div class="benefit-item">
+                  <h3>Visualize Tenant and Property Performance</h3>
+                  <p>Get detailed reports on tenant payments, rent income, and occupancy trends to stay on top of your investments.</p>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+      <div class="container">
+          <h2>Key Features of Landlordr</h2>
+          <div class="features">
+              <div class="feature-item">
+                  <h3>Comprehensive Tenant Profiles</h3>
+                  <p>Create detailed profiles for each tenant, including personal information, lease terms, rent payments, and more.</p>
+              </div>
+              <div class="feature-item">
+                  <h3>Payment Tracking and Reporting</h3>
+                  <p>Track rent payments, outstanding balances, and automatically send reminders to tenants. View detailed financial reports for each property.</p>
+              </div>
+              <div class="feature-item">
+                  <h3>Document Management</h3>
+                  <p>Upload and organize lease agreements, inspection reports, and other important documents. Access them anytime from your dashboard.</p>
+              </div>
+              <div class="feature-item">
+                  <h3>Tenant Communication</h3>
+                  <p>Message your tenants directly through the app, send updates, or request documents. All conversations are stored for easy reference.</p>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Content Offer Section -->
+    <section>
+      <div class="container">
+          <h2>Get Started with Our Free Resources</h2>
+          <div class="content">
+              <h3>Free Tenant Management Guide</h3>
+              <p>Download our guide on best practices for managing tenant information, lease agreements, and rental payments.</p>
+              <button>Download Now</button>
+          </div>
+          <div class="content">
+              <h3>5 Tips for Property Management Success</h3>
+              <p>Learn how to streamline your property management process and keep your tenants happy.</p>
+              <button>Read the Blog</button>
+          </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section>
+      <div class="container">
+          <h2>What Landlords Are Saying</h2>
+          <div class="testimonial">
+              <p>"Landlordr has completely transformed the way I manage my properties. I never have to worry about missing rent or lease renewals!"</p>
+              <p><strong>John D., Property Owner</strong></p>
+          </div>
+          <div class="testimonial">
+              <p>"The automated reminders and tenant profiles have saved me hours each month. It's a must-have for anyone managing multiple properties."</p>
+              <p><strong>Sarah P., Real Estate Manager</strong></p>
+          </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section>
+      <div class="container">
+          <h2>Simple Pricing for Every Landlord</h2>
+          <div class="pricing-plan">
+              <div>
+                  <h3>Starter Plan</h3>
+                  <p>For landlords with up to 5 tenants. Basic features included.</p>
+                  <p><strong>Free</strong></p>
+                  <button>Sign Up for Free</button>
+              </div>
+              <div>
+                  <h3>Pro Plan</h3>
+                  <p>Unlimited tenants, advanced reporting, and priority support.</p>
+                  <p><strong>$20/month</strong></p>
+                  <button>Start Free Trial</button>
+              </div>
+          </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Landlordr. All rights reserved.</p>
+    <p>Contact us at support@landlordr.com</p>
+    <p>Follow us on <a href="#">Facebook</a>, <a href="#">Twitter</a>, <a href="#">LinkedIn</a></p>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <label for="username">Username:</label>
+            <input type='text' id="username" required/>
+            <br/>
+            <label for="password">Password:</label>
+            <input type='password' id="password" required/>
+          </form>
+          <div class="alert alert-danger" role="alert" hidden>Please enter username and password</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onClick="handleLogin">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
+
+
+<!-- <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
