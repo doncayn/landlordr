@@ -16,13 +16,6 @@
     <!-- Add other style sheets below this line -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!-- Script imports -->
-    <link rel="script" href="./assets/js/index.js">
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 
 </head>
 <body>
@@ -176,17 +169,27 @@
             <label for="password">Password:</label>
             <input type='password' id="password" required/>
           </form>
-          <div class="alert alert-danger" role="alert" hidden>Please enter username and password</div>
+          <div class="alert alert-danger" role="alert"  id='alert' hidden>Please enter username and password</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onClick="handleLogin">Login</button>
+          <button type="button" class="btn btn-primary" onClick="handleLogin()">Login</button>
         </div>
       </div>
     </div>
   </div>
 
 </body>
+
+    <!-- Script imports -->
+    <script src="./assets/js/index.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
 </html>
 
 
