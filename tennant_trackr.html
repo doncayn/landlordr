@@ -24,13 +24,6 @@
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Add other style sheets below this line -->
-
-    <!-- Script imports -->
-    <link rel="script" href="./assets/js/index.js">
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -38,57 +31,31 @@
         <header>
             <h1>TenantTrackr</h1>
             <p>Track Your Tenants</p>
+            <button type="button" class="btn btn-primary" data-toggle="logout" data-target="#logOutButton">
+              Logout
+            </button>
         </header>
         <main>
-            <button>Add Tenant</button>
-            <table>
-                <tr>
-                    <th>First</th>
-                    <th>Last</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Pets</th>
-                    <th>Notes</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td> 
-                </tr>
-                <table class="table">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tenantModal">
+            Add Tenant
+          </button>
+                <table class="table" id="tennantList">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
                         <th scope="col">First</th>
                         <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Pets</th>
+                        <th scope="col">Notes</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+
                       </tr>
                     </tbody>
                   </table>
-            </table>
         </main>
         <!-- Script imports -->
     <link rel="script" href="./assets/js/index.js">
@@ -96,35 +63,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </header>
-
-    <article class="card">
-        <div class="card">
-            <div class="card-body">
-
-            </div>
+    
+    <div class="modal fade" id="tenantModal" tabindex="-1" role="dialog" aria-labelledby="myTenantLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="tenant-modal" id="myTenantLabel">Tenant Information</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-    <!-- Add property info here -->
-
-    </article>
-
-
-
-
+          <div class="modal-body">
+            <form>
+              <label for="name">First Name:</label>
+              <input type='text' id="name" required/>
+              <br/>
+              <label for="last">Last Name:</label>
+              <input type='text' id="last" required/>
+              <br/>
+              <label for="name">Phone:</label>
+              <input type='tel' id="phone" required/>
+              <br/>
+              <label for="name">Email:</label>
+              <input type='email' id="email" required/>
+              <br/>
+              <label for="name">Pets:</label>
+              <input type='text' id="pet" required/>
+              <br/>
+              <label for="name">Notes:</label>
+              <input type='text' id="notes" required/>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
         Copyright © 2024 LandLordr
@@ -133,4 +109,12 @@
         </ul>
     </footer> 
 </body>
+
+<!-- Script imports -->
+<link rel="script" href="./assets/js/index.js">
+<script src="./assets/js/tennant_trackr.js"></script>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>
