@@ -1,66 +1,91 @@
 // variable that selects main element
 const main = document.querySelector('main');
 const logOutButton = document.getElementById('logOutButton');
-const hide = document.getElementById('hide');
+// const hide = document.getElementById('hide');
+const submit = document.getElementById('submit');
 
-// TODO: hide tennant checkbox, only show unchecked tennant cards
+// TODO: hide tennant checkbox, only show unchecked tennant cards??
 
 // variable for log out button
-// render back button function
+
+//logOutButton.addEventListener('click', function() {
+//   window.location.href = 'index.html';
+// });
+
 
 // build element and append to DOM
+function renderTennantList() {
+    let tennants = getTennantInfo();
+    let tennantList = document.getElementById('tennantList');
+    tennantList.innerHTML = `
+        <thead>
+            <tr>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Pets</th>
+                <th scope="col">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
 
-// no tennants message
+            </tr>
+        </tbody>`;
+    tennants.forEach(function (tennant) {
+        let tennantCard = document.createElement('tr');
+        tennantCard.setAttribute('class', 'tennantCard');
+        tennantCard.innerHTML = `
+            <td>${tennant.name}</td>
+            <td>${tennant.last}</td>
+            <td>${tennant.phone}</td>
+            <td>${tennant.email}</td>
+            <td>${tennant.pet}</td>
+            <td>${tennant.notes}</td>
+        `;
+        tennantList.appendChild(tennantCard);
+    });
+}
 
 // render tennant list function
-
-document.querySelector('form').addEventListener('submit', function(event) {
+console.log(document.querySelector('form'));
+submit.addEventListener('click', function(event) {
     event.preventDefault(); // Prevent form submission
+    console.log('Form submitted');
+const tenantModal = document.getElementById('tenantModal');
 
     // Get all form values
-    var name = document.getElementById('first').value;
-    var name = document.getElementById('last').value;
-    var dob = document.getElementById('dob').value;
-    var phone = document.getElementById('phone').value;
-    var email = document.getElementById('email').value;
-    var property = document.getElementById('property').value;
-    var startDate = document.getElementById('startDate').value;
-    var endDate = document.getElementById('endDate').value;
-    var rent = document.getElementById('rent').value;
-    var deposit = document.getElementById('deposit').value;
-    var pet = document.getElementById('pet').value;
-    var vehicle = document.getElementById('vehicle').value;
-    var addOcuppants = document.getElementById('addOcuppants').value;
-    var notes = document.getElementById('notes').value;
+    let name = document.getElementById('name').value;
+    let last = document.getElementById('last').value;
+    let phone = document.getElementById('phone').value;
+    let email = document.getElementById('email').value;
+    let pet = document.getElementById('pet').value;
+    let notes = document.getElementById('notes').value;
 
     
 
     // Perform form validation
-    if (first === '' || last === '' || dob === '' || phone === '' || email === '' || property === '' || startDate === '' || endDate === '' || rent === '' || deposit === '' || pet === '' || vehicle === '') {
+    if (name === '' || last === '' ||  phone === '' || email === '' || pet === '' || notes === '') {
         alert('Please enter information in all fields');
         return;
     }
 
     // Save tennant info
-    var tennant = {
+    let tennant = {
         name: name,
         last: last,
-        dob: dob,
         phone: phone,
         email: email,
-        property: property,
-        startDate: startDate,
-        endDate: endDate,
-        rent: rent,
-        deposit: deposit,
         pet: pet,
-        vehicle: vehicle,
-        addOcuppants: addOcuppants,
         notes: notes,
 
     };
     saveTennantInfo(tennant);
-
+    $('#tenantModal').modal('hide');
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
+    renderTennantList();
     // Perform further processing or submit the form
     // ...
 });
@@ -82,11 +107,13 @@ function getTennantInfo() {
     return JSON.parse(localStorage.getItem('tennants')) || [];
 }   // ^^
 
+// add tenant button 
 
-// reditect page function
 
-let redDirectUrl = '';
-function redDirectPage() {
+// redirect page function
+
+let redirectUrl = '';
+function redirectPage() {
     if (backButton) {
         backButton.addEventListener('click', function () {
            redirectPage('index.html');
