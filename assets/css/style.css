@@ -31,6 +31,9 @@ div {
     width: 100%;
 }
 
+th, td{
+    color: var(--text-color)
+}
 
 *,
 *::before,
