@@ -5,6 +5,7 @@
     --color-tertiary: #C8B88A;
     --color-quaternary: #FFE5D9;
     --text-color: #212529;
+    --nth-color: #fcf6e2;
     
 }
 
@@ -15,6 +16,7 @@ body.dark {
     --color-tertiary: #3C3D37;
     --color-quaternary: #272727;
     --text-color: #ECDFCC;
+    --nth-color: grey;
 }
 
 body {
