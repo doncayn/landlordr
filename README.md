@@ -4,6 +4,10 @@
 
 As a landlord, I want a way to see all my past and current contracts with tenants. I wanted it to be easily readable and accessible by logging in with a username and password. It should be usable by other landlords just like me. It should display tenant information in a table.
 
+## Screenshot
+
+*Insert photo here*
+
 ## Installation
 
 N/A
@@ -21,3 +25,7 @@ Built with love by Dondre Cain, Janessa Clark, Owen Kenne, & Ariel Schilling
 ## License
 
 MIT License
+
+## Link
+
+*Coming soon*
