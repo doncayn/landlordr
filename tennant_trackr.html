@@ -1,80 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>LandLordr</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LandLordr</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
-    
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-     <!-- Bootstrap CSS-->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-     <!-- Add other style sheets below this line -->
-     <link rel="stylesheet" href="./assets/css/style.css">
-     <link rel="stylesheet" href="./trackr.css">
 
-     <!-- Stupid jquery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- BootStrap for Checkbox-->
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+    rel="stylesheet">
+
+  <!-- Add other style sheets below this line -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./trackr.css">
+
+  <!-- Stupid jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
-    <body>
-        <header>
-          <div>
-            <div class="pos-f-t" style="float: right;">
-              <div class="collapse" id="navbarToggleExternalContent">
-                <div class="bg-dark p-4">
-                  <h5 class="text-white h4">Magic Menu</h5>
-                  <div id="headerBtns">
-                    <label for="togglr">
-                      Dark: 
-                      <input id="togglr" checked type="checkbox" data-toggle="toggle" data-onstyle="dark" data-offstyle="light" data-style="border">
-                    </label>
-                    <button type="button" class="btn btn-primary" data-toggle="logout" data-target="#logOutButton" onclick="location.href='index.html';">
-                      Logout
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <nav id="brgr" class="navbar navbar-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+
+  <body>
+    <header>
+      <div>
+        <div class="pos-f-t" style="float: right;">
+          <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+              <h5 class="text-white h4">Magic Menu</h5>
+              <div id="headerBtns">
+                <label for="togglr">
+                  Dark:
+                  <input id="togglr" checked type="checkbox" data-toggle="toggle" data-onstyle="dark"
+                    data-offstyle="light" data-style="border">
+                </label>
+                <button type="button" class="btn btn-primary" data-toggle="logout" data-target="#logOutButton"
+                  onclick="location.href='index.html';">
+                  Logout
                 </button>
-              </nav>
+              </div>
             </div>
+          </div>
+          <nav id="brgr" class="navbar navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
+        </div>
 
-            <h1>TenantTrackr</h1>
-            <p>Track Your Tenants</p>
-        </header>
+        <h1>TenantTrackr</h1>
+        <p>Track Your Tenants</p>
+    </header>
 
-        <main>
-          <button type="button" class="btn btn-primary mybutton" data-toggle="modal" data-target="#tenantModal">
-            Add Tennant
-          </button>
-          <table class="table" id="tennantList">
-            <thead>
-              <tr>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Email</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Pets</th>
-                <th scope="col">Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-              </tr>
-            </tbody>
-          </table>
-        </main>
+    <main>
+      <button type="button" class="btn btn-primary mybutton" data-toggle="modal" data-target="#tenantModal">
+        Add Tennant
+      </button>
+      <table class="table" id="tennantList">
+        <thead>
+          <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Pets</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+    </main>
 
-    <div class="modal fade" id="tenantModal" tabindex="-1" role="dialog" aria-labelledby="myTenantLabel" aria-hidden="true">
+    <div class="modal fade" id="tenantModal" tabindex="-1" role="dialog" aria-labelledby="myTenantLabel"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -86,22 +98,22 @@
           <div class="modal-body">
             <form>
               <label for="name">First Name:</label>
-              <input type='text' id="name" required/>
-              <br/>
+              <input type='text' id="name" required />
+              <br />
               <label for="last">Last Name:</label>
-              <input type='text' id="last" required/>
-              <br/>
+              <input type='text' id="last" required />
+              <br />
               <label for="name">Phone:</label>
-              <input type='tel' id="phone" required/>
-              <br/>
+              <input type='tel' id="phone" required />
+              <br />
               <label for="name">Email:</label>
-              <input type='email' id="email" required/>
-              <br/>
+              <input type='email' id="email" required />
+              <br />
               <label for="name">Pets:</label>
-              <input type='text' id="pet" required/>
-              <br/>
+              <input type='text' id="pet" required />
+              <br />
               <label for="name">Notes:</label>
-              <input type='text' id="notes" required/>
+              <input type='text' id="notes" required />
             </form>
           </div>
           <div class="modal-footer">
@@ -113,22 +125,21 @@
     </div>
 
     <footer>
-        Copyright © 2024 LandLordr
-        <ul>
-         <!-- Add dummy list of references to index pages? -->
-        </ul>
-    </footer> 
-</body>
+      Copyright © 2024 LandLordr
+      <ul>
+        <!-- Add dummy list of references to index pages? -->
+      </ul>
+    </footer>
+  </body>
 
-<!-- Script imports -->
-<link rel="script" href="./assets/js/index.js">
-<script src="./assets/js/tennant_trackr.js"></script>
-<script src="./assets/js/dark.js"></script>
+  <!-- Script imports -->
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/tennant_trackr.js"></script>
+  <script src="./assets/js/dark.js"></script>
 
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- javascript for checkbox -->
-<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- javascript for checkbox -->
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
 </html>
