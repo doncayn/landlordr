@@ -23,7 +23,7 @@ footer{
   }   
    .table tr:nth-child(even) {
 
-    background-color: #fcf6e2;
+    background-color: var(--nth-color);
    }
   .table tr:hover {background-color: burlywood;
    }

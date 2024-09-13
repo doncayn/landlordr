@@ -10,7 +10,6 @@ const trialPress = document.querySelector('#trial');
 
 console.log(alertElement);
 
-let loginInfo= [];
 let mode= 'light';
 
 
@@ -18,6 +17,8 @@ let mode= 'light';
 // Puts our information in local storage
 const storeLS= function(loginData){
     //pushes user input into an array
+    let loginInfo= readLS() || [];
+
    loginInfo.push(loginData);
    console.log('Login data in local storage:', loginInfo);
    //stringifies and saves to local storage

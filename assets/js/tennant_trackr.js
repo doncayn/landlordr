@@ -50,10 +50,10 @@ function renderTennantList() {
 
 // render tennant list function
 console.log(document.querySelector('form'));
-submit.addEventListener('click', function(event) {
+submit.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent form submission
     console.log('Form submitted');
-const tenantModal = document.getElementById('tenantModal');
+    const tenantModal = document.getElementById('tenantModal');
 
     // Get all form values
     let name = document.getElementById('name').value;
@@ -63,10 +63,10 @@ const tenantModal = document.getElementById('tenantModal');
     let pet = document.getElementById('pet').value;
     let notes = document.getElementById('notes').value;
 
-    
+
 
     // Perform form validation
-    if (name === '' || last === '' ||  phone === '' || email === '' || pet === '' || notes === '') {
+    if (name === '' || last === '' || phone === '' || email === '' || pet === '' || notes === '') {
         alert('Please enter information in all fields');
         return;
     }
@@ -83,9 +83,14 @@ const tenantModal = document.getElementById('tenantModal');
     };
     saveTennantInfo(tennant);
     $('#tenantModal').modal('hide');
+
     $('body').removeClass('modal-open');
     $('.modal-backdrop').remove();
+    $('.modal').on('hidden.bs.modal', function (e) {
+        $(".modal-body form")[0].reset();
+    });
     renderTennantList();
+
     // Perform further processing or submit the form
     // ...
 });
@@ -101,13 +106,13 @@ function saveTennantInfo(tennant) {
     var tennants = JSON.parse(localStorage.getItem('tennants')) || [];
     tennants.push(tennant);
     localStorage.setItem('tennants', JSON.stringify(tennants));
-}  
+}
 
 function getTennantInfo() {
     return JSON.parse(localStorage.getItem('tennants')) || [];
 }   // ^^
 
-// add tenant button 
+// add tenant button
 
 
 // redirect page function
