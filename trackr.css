@@ -23,10 +23,13 @@ footer{
   }   
    .table tr:nth-child(even) {
 
-    background-color: #fcf6e2;
+    background-color: var(--color-primary);
    }
-  .table tr:hover {background-color: burlywood;
+   
+  .table tr:hover {background-color: var(--hover-color);
    }
+
+
 
    .mybutton {
     margin: 10px;
