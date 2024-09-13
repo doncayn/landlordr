@@ -2,8 +2,19 @@
 :root {
     --color-primary: #84A98C;
     --color-secondary: #52796F;
-    --color-tertiary: ;
+    --color-tertiary: #C8B88A;
     --color-quaternary: #FFE5D9;
+    --text-color: #212529;
+    
+}
+
+/* Dark mode styles */
+body.dark {
+    --color-primary: #1c1c1c;
+    --color-secondary: #1c1c1c;
+    --color-tertiary: #3C3D37;
+    --color-quaternary: #272727;
+    --text-color: #ECDFCC;
 }
 
 body {
@@ -12,7 +23,16 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: var(--color-quaternary);
+    color: var(--text-color);
     overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+div {
+    width: 100%;
+}
+
+th, td{
+    color: var(--text-color)
 }
 
 *,
@@ -29,8 +49,8 @@ header {
     text-align: center;
     background-color: var(--color-secondary);
     padding: 20px;
-    width: 100%; /* Ensure header takes full width without overflow */
-    max-width: 100vw; /* Prevent horizontal overflow */
+    width: 100%; 
+    max-width: 100vw; 
 }
 
 header h1 {
@@ -38,15 +58,19 @@ header h1 {
     margin-bottom: 10px;
     font-weight: 400;
     font-style: normal;
-    font-size: 40px; /* Adjusted for mobile */
-    word-wrap: break-word; /* Ensure long words break and fit within the screen */
+    font-size: 40px; 
+    word-wrap: break-word;
 }
 
 header p {
     margin: 0;
     font-size: 16px;
-    max-width: 100%; /* Prevents paragraph from stretching wider than the screen */
+    max-width: 100%; 
     
+}
+
+header button {
+    margin-top: 5px;
 }
 
 .adlam-display-regular {
@@ -54,6 +78,67 @@ header p {
     font-weight: 400;
     font-style: normal;
   }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 85%;
+}
+
+h1.header {
+    text-align: left; 
+    margin-bottom: 10px;
+    font-size: 3em;
+}
+
+.header p {
+    text-align: left; 
+    font-size: 1.2em;
+}
+
+.pos-f-t {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    height: 100%; 
+    width: 10%
+}
+
+.navbar-toggler {
+    height: 100%;
+    width: 60px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secondary); 
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+}
+
+#navbarToggleExternalContent {
+    position: absolute;
+    right: 0;
+    top: 75px;
+    width: 250px;
+    z-index: 1050;
+    transition: 0.3s ease; 
+}
+
+#headerBtns {
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    color: #f1f1f1;
+}
 
  /* Sections */
 section {
@@ -74,7 +159,7 @@ section {
 }
 
 .benefit-item, .feature-item {
-    background: #f9f9f9;
+    background: var(--color-tertiary);
     padding: 20px;
     margin-bottom: 20px; /* Space between stacked items */
     border-radius: 10px;
@@ -83,8 +168,9 @@ section {
 }
 
 .benefit-item h3, .feature-item h3 {
+    font-weight: bolder;
     margin-bottom: 10px;
-    color: #007BFF;
+    color: var(--color-secondary);
 }
 
 
@@ -139,7 +225,7 @@ footer {
     .benefits, .features {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap; /* Wrap if necessary to prevent overflow */
+        flex-wrap: wrap;
     }
 
     .benefit-item, .feature-item {
@@ -148,7 +234,7 @@ footer {
     }
 
     .cta-buttons {
-        justify-content: flex-end; /* Align buttons to the right */
+        justify-content: flex-end;
     }
 }
 
@@ -163,16 +249,29 @@ footer {
     }
 
     .container {
-        width: 80%; /* Wider container for desktop */
+        width: 80%;
     }
 
     .benefits, .features {
-        justify-content: center;
+        /* justify-content: center;
+        flex-wrap: nowrap; */
+        display: flex;
+        flex-wrap: wrap;                /* Allows items to wrap when there's no space */
+        justify-content: space-between; /* Distribute space between items */
+        gap: 20px;                      /* Gap between feature items */
     }
 
     .benefit-item, .feature-item {
-        flex-basis: 30%; /* Smaller items to fit more on screen */
-        margin: 8px;
-
+        /* flex: 1 1 30%;
+        margin: 8px; */
+        flex: 1 1 250px;                /* Allow the items to grow, shrink, and have a minimum width of 250px */
+    box-sizing: border-box;         /* Ensures padding is included in width */
+    padding: 20px;                  /* Padding inside the feature items */
+    text-align: center;             /* Center the text inside */
+    border-radius: 10px;            /* Rounded corners */
+    transition: 0.3s ease;          /* Smooth transition for hover effects */
+    display: flex;                  /* Flexbox for content alignment inside each item */
+    flex-direction: column;         /* Stack content inside vertically */
+    justify-content: space-between;
     }
 }
