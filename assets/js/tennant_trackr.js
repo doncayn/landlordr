@@ -112,13 +112,5 @@ function getTennantInfo() {
 
 // redirect page function
 
-let redirectUrl = '';
-function redirectPage() {
-    if (backButton) {
-        backButton.addEventListener('click', function () {
-           redirectPage('index.html');
-        });
-    }
-}
 
 // changes
