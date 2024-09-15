@@ -28,4 +28,4 @@ MIT License
 
 ## Link
 
-(https://doncayn.github.io/landlordr/)
+https://doncayn.github.io/landlordr/
