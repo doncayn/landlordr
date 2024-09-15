@@ -6,7 +6,7 @@ As a landlord, I want a way to see all my past and current contracts with tenant
 
 ## Screenshot
 
-*Insert photo here*
+![Alt text](/relative/assets/Pictures/LandLordr Add Tenant.png?raw=true "Screenshot 2")
 
 ## Installation
 
